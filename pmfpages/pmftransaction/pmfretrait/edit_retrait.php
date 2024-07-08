@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Tous les champs doivent être remplis.";
         exit;
     }
-
+    echo '1';
     // Vérifier que le numéro de compte existe
     $query = $conn->prepare("SELECT * FROM compte WHERE idcompte = ?");
     $query->bind_param("s", $numero_compte);
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
     $compte = $result->fetch_assoc();
-
+    echo '2';
     // Vérifier que le login de l'utilisateur existe
     $query = $conn->prepare("SELECT * FROM Client WHERE idclient = ?");
     $query->bind_param("s", $login_utilisateur);
@@ -53,13 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
     $client = $result->fetch_assoc();
-
+    echo '3';
     // Vérifier que le mot de passe est correct
     if ($client['passclient'] != $mot_de_passe) {
         echo "Le mot de passe est incorrect.";
         exit;
     }
-
+    echo '4';
     // Vérifier que le montant est valide
     $devise = strtolower($compte['devise']);
     if (($devise == 'fcfa' && $montant < 1000) || ($devise != 'fcfa' && $montant < 50)) {
@@ -67,19 +67,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
+    echo '5';
     // Vérifier que le montant du retrait est inférieur au solde du compte
     if ($montant > $compte['solde']) {
         echo "Le montant du retrait est supérieur au solde du compte.";
         exit;
     }
-
+    echo '6';
     // Effectuer le retrait
     /* $nouveau_solde = $compte['solde'] - $montant;
     $query = $conn->prepare("UPDATE compte SET solde = ? WHERE idcompte = ?");
     $query->bind_param("ds", $nouveau_solde, $numero_compte);
     $query->execute(); */
     $nouveau_solde = $compte['solde'] - $montant;
-    $con->query("update compte set  solde=$nouveau_solde, where idcompte='".$reg["1"]['idcompte']."'") or die(mysqli_error($con));
+    $con->query("update compte set  solde=$nouveau_solde, where idcompte=$numero_compte") or die(mysqli_error($con));
                                     
    
 

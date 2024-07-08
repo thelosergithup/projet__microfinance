@@ -61,10 +61,10 @@
                                   
                                    <!--  <li><a href="pmfpages/pmftransaction/pmfdepot/form_depot">depot</a></li> -->
                                     <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmftransaction/pmfdepot/form_depot'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">depot</a>
-
                                     <li class="divider"></li>
-
                                     <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmftransaction/pmfretrait/form_retrait'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">retrait</a>
+                                    <li class="divider"></li>
+                                    <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmftransaction/pmftransfert/form_transfert'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">transfert</a>
 
 
                                 </ul>

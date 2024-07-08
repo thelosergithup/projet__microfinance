@@ -82,7 +82,7 @@
                             <div class="row">
                                 <div class="col-md-8 col-sm-8 col-xs-8">
                                     <div class="form-group">
-                                        <button href="javascript:history.go(-1)" type="submit" class="btn btn-primary">Soumettre</button>
+                                        <button  type="submit" class="btn btn-primary">Soumettre</button>
                                     </div>
                                 </div>
                             </div>

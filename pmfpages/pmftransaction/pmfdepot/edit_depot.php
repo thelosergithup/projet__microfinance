@@ -36,7 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = $con->prepare("UPDATE compte SET solde = ? WHERE idcompte = ?");
     $query->bind_param("ds", $nouveau_solde, $numero_compte);
     if ($query->execute()) {
-        echo "Dépôt effectué avec succès. Le nouveau solde est " . $nouveau_solde;
+        echo "<div class='alert alert-success'>Dépôt effectué avec succès. Le nouveau solde est " . $nouveau_solde. ".</div>";
+        
     } else {
         echo "Une erreur s'est produite. Veuillez réessayer.";
     }

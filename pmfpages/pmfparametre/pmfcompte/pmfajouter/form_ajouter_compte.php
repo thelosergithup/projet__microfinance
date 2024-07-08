@@ -66,28 +66,29 @@
 
                             </div>
                             <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                <!--  <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="form-group" style="margin-left:15px;">
                                         <label class="control-label">Nom client&nbsp;<g style="color: red">*</g></label>
                                         <div class="inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                <input value="<?php echo $_SESSION['formcompte'][NUM_PAGE]["compte"]; ?>" onkeyup="this.value = this.value.toLowerCase();" style="text-transform: capitalize;" class="form-control" placeholder="" type="text" name="compte" id="compte" />
+                                                <input value="<?php //echo $_SESSION['formcompte'][NUM_PAGE]["compte"]; 
+                                                                ?>" onkeyup="this.value = this.value.toLowerCase();" style="text-transform: capitalize;" class="form-control" placeholder="" type="text" name="compte" id="compte" />
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="form-group" style="margin-left:15px;">
                                         <label class="control-label">Solde&nbsp;<g style="color: red">*</g></label>
                                         <div class="inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                <input value="<?php echo $_SESSION['formcompte'][NUM_PAGE]["solde"]; ?>" onkeyup="this.value = this.value.toLowerCase();" style="text-transform: capitalize;" class="form-control" placeholder="" type="text" name="solde" id="solde" />
+                                                <input value="<?php echo $_SESSION['formcompte'][NUM_PAGE]["solde"]; ?>" onkeyup="this.value = this.value.toLowerCase();" style="text-transform: capitalize;" class="form-control" placeholder="" type="number" name="solde" id="solde" />
                                             </div>
                                         </div>
                                     </div>
-                                </div>-->
+                                </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="form-group" style="margin-left:15px;">
                                         <label class="control-label">Devise&nbsp;<g style="color: red">*</g></label>
