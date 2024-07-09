@@ -58,14 +58,18 @@
                             <li class="dropdown  ">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">transaction <b class="caret"></b></a>
                                 <ul class="dropdown-menu animated zoomIn">
-                                  
-                                   <!--  <li><a href="pmfpages/pmftransaction/pmfdepot/form_depot">depot</a></li> -->
+
+                                    <!--  <li><a href="pmfpages/pmftransaction/pmfdepot/form_depot">depot</a></li> -->
                                     <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmftransaction/pmfdepot/form_depot'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">depot</a>
                                     <li class="divider"></li>
                                     <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmftransaction/pmfretrait/form_retrait'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">retrait</a>
                                     <li class="divider"></li>
                                     <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmftransaction/pmftransfert/form_transfert'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">transfert</a>
 
+                                    <li class="divider"></li>
+                                    <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfpret/demande_pret'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">demande pret</a>
+                                    <li class="divider"></li>
+                                    <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfpret/calendrier_remboursement'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">calendrier de remboursement</a>
 
                                 </ul>
                             </li>

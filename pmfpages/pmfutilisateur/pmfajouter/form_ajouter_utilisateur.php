@@ -1,4 +1,3 @@
-
 <div class="single-product-tab-area mg-tb-15">
     <!-- Single pro tab review Start-->
     <div class="single-pro-review-area">
@@ -40,7 +39,7 @@
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group">
-                                        <label class="control-label" >R&ocirc;le &nbsp;<g style="color: red">*</g></label>
+                                        <label class="control-label">R&ocirc;le &nbsp;<g style="color: red">*</g></label>
                                         <div class="inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -55,7 +54,7 @@
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group">
-                                        <label class="control-label" >Login &nbsp;<g style="color: red">*</g></label>
+                                        <label class="control-label">Login &nbsp;<g style="color: red">*</g></label>
                                         <div class="inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -66,7 +65,7 @@
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group">
-                                        <label class="control-label" >Mot de passe &nbsp;<g style="color: red">*</g></label>
+                                        <label class="control-label">Mot de passe &nbsp;<g style="color: red">*</g></label>
                                         <div class="inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-mail-forward"></i></span>
@@ -77,7 +76,7 @@
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group">
-                                        <label class="control-label" >Confirmer le Mot de passe &nbsp;<g style="color: red">*</g></label>
+                                        <label class="control-label">Confirmer le Mot de passe &nbsp;<g style="color: red">*</g></label>
                                         <div class="inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-mail-forward"></i></span>
@@ -92,7 +91,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="form-group">
-                                                <label class="control-label" >T&eacute;l&eacute;phone&nbsp;</label>
+                                                <label class="control-label">T&eacute;l&eacute;phone&nbsp;</label>
                                                 <div class="inputGroupContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -105,11 +104,11 @@
 
                                         <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="form-group">
-                                                <label class="control-label" >Numero CNI &nbsp;<g style="color: red">*</g></label>
+                                                <label class="control-label">Numero CNI &nbsp;<g style="color: red">*</g></label>
                                                 <div class="inputGroupContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                        <input value="<?php echo $_SESSION['formutilisateur'][NUM_PAGE]["cni"]; ?>"  class="form-control" placeholder="" type="text" name="cni" id="cni" />
+                                                        <input value="<?php echo $_SESSION['formutilisateur'][NUM_PAGE]["cni"]; ?>" class="form-control" placeholder="" type="text" name="cni" id="cni" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -121,7 +120,8 @@
                                                                                         <div class="inputGroupContainer">
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                                                                <input value="<?php //echo $_SESSION['formutilisateur'][NUM_PAGE]["ligne"];    ?>" class="form-control" placeholder="" type="text" name="ligne" id="ligne" />
+                                                                                                <input value="<?php //echo $_SESSION['formutilisateur'][NUM_PAGE]["ligne"];    
+                                                                                                                ?>" class="form-control" placeholder="" type="text" name="ligne" id="ligne" />
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -197,156 +197,155 @@
 </div>
 
 <script type="text/javascript">
-            $(document).ready(function () {
-    // Generate a simple captcha
-    function randomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-    ;
-            $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
-            $('#ajout_utilisateur').bootstrapValidator({
-//        live: 'disabled',
-    message: 'Cette valeur est invalide',
+    $(document).ready(function() {
+        // Generate a simple captcha
+        function randomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        };
+        $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
+        $('#ajout_utilisateur').bootstrapValidator({
+            //        live: 'disabled',
+            message: 'Cette valeur est invalide',
             feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-                    invalid: 'glyphicon glyphicon-remove',
-                    validating: 'glyphicon glyphicon-refresh'
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
             },
             fields: {
-            nom: {
-            message: 'Nom de l\'utilisateur invalide',
+                nom: {
+                    message: 'Nom de l\'utilisateur invalide',
                     validators: {
-                    notEmpty: {
-                    message: 'Le nom de l\'utilisateur est obligatoire'
+                        notEmpty: {
+                            message: 'Le nom de l\'utilisateur est obligatoire'
+                        }
                     }
-                    }
-            },
-                    : {
+                },
+                : {
                     message: 'Entête de l\'utilisateur invalide',
-                            validators: {
-                            notEmpty: {
+                    validators: {
+                        notEmpty: {
                             message: 'L\'Entête de l\'utilisateur est obligatoire'
-                            }
-                            }
-                    },
-                    departement: {
+                        }
+                    }
+                },
+                departement: {
                     message: 'Département de l\'utilisateur invalide',
-                            validators: {
-                            notEmpty: {
+                    validators: {
+                        notEmpty: {
                             message: 'Le Département de l\'utilisateur est obligatoire'
-                            }
-                            }
-                    },
-                    role: {
+                        }
+                    }
+                },
+                role: {
                     message: 'Rôle de l\'utilisateur invalide',
-                            validators: {
-                            notEmpty: {
+                    validators: {
+                        notEmpty: {
                             message: 'Le Rôle de l\'utilisateur est obligatoire'
-                            }
-                            }
-                    },
-                    login: {
+                        }
+                    }
+                },
+                login: {
                     message: 'Login de l\'utilisateur invalide',
-                            validators: {
-                            notEmpty: {
-                            message: 'Le login de l\'utilisateur est obligatoire'
-                            },
-                                    remote: {
-                                    type: 'POST',
-                                            url: './pmfpages/pmfutilisateur/remoteformvalidationutilisateur.php',
-                                            message: 'Le login doit etre unique'
-                                    },
-                                    regexp: {
-                                    regexp: /^[a-zA-Z0-9_\.]+$/,
-                                            message: 'Le login doit contenir seulement les lettres de l\'alphabet, les chiffres, le point and la barre de 8(_)'
-                                    }
-                            }
-                    },
-                    cni: {
-                    message: 'numero de la CNI de l\'utilisateur invalide',
-                            validators: {
-                            notEmpty: {
-                            message: 'Le login de l\'utilisateur est obligatoire'
-                            },
-                                    remote: {
-                                    type: 'POST',
-                                            url: './pmfpages/pmfutilisateur/remoteformvalidationutilisateur.php',
-                                            message: 'Le numero de cni doit etre unique'
-                                    },
-                                    regexp: {
-                                    regexp: /^[a-zA-Z0-9\]+$/,
-                                            message: 'Le login doit contenir seulement les lettres de l\'alphabet et les chiffres'
-                                    }
-                            }
-                    },
-                    pass1: {
                     validators: {
-                    notEmpty: {
-                    message: 'Le mot de passe de l\'utilisateur est obligatoire'
-                    },
-                            identical: {
-                            field: 'pass2'
-                            },
-                            remote: {
+                        notEmpty: {
+                            message: 'Le login de l\'utilisateur est obligatoire'
+                        },
+                        remote: {
                             type: 'POST',
-                                    url: './pmfpages/pmfutilisateur/remoteformvalidationutilisateur.php',
-                                    message: 'Le mot de passe doit etre unique'
-                            }
+                            url: './pmfpages/pmfutilisateur/remoteformvalidationutilisateur.php',
+                            message: 'Le login doit etre unique'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_\.]+$/,
+                            message: 'Le login doit contenir seulement les lettres de l\'alphabet, les chiffres, le point and la barre de 8(_)'
+                        }
                     }
-                    },
-                    pass2: {
+                },
+                cni: {
+                    message: 'numero de la CNI de l\'utilisateur invalide',
                     validators: {
-                    identical: {
-                    field: 'pass1'
+                        notEmpty: {
+                            message: 'Le login de l\'utilisateur est obligatoire'
+                        },
+                        remote: {
+                            type: 'POST',
+                            url: './pmfpages/pmfutilisateur/remoteformvalidationutilisateur.php',
+                            message: 'Le numero de cni doit etre unique'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9\]+$/,
+                            message: 'Le login doit contenir seulement les lettres de l\'alphabet et les chiffres'
+                        }
                     }
-                    }
-                    },
-                    email: {
+                },
+                pass1: {
                     validators: {
-                    emailAddress: {
-                    message: 'Adresse mail invalide'
+                        notEmpty: {
+                            message: 'Le mot de passe de l\'utilisateur est obligatoire'
+                        },
+                        identical: {
+                            field: 'pass2'
+                        },
+                        remote: {
+                            type: 'POST',
+                            url: './pmfpages/pmfutilisateur/remoteformvalidationutilisateur.php',
+                            message: 'Le mot de passe doit etre unique'
+                        }
                     }
+                },
+                pass2: {
+                    validators: {
+                        identical: {
+                            field: 'pass1'
+                        }
                     }
-                    },
-                    tel: {
+                },
+                email: {
+                    validators: {
+                        emailAddress: {
+                            message: 'Adresse mail invalide'
+                        }
+                    }
+                },
+                tel: {
                     message: 'Téléphone de l\'utilisateur invalide',
-                            validators: {
-                            regexp: {
-                            regexp: /^[0-9]+$/,
-                                    message: 'Le Téléphone doit contenir seulement les chiffres'
-                            }
-                            }
-                    },
-                    ligne: {
-                    message: 'Ligne de l\'utilisateur invalide',
-                            validators: {
-                            regexp: {
-                            regexp: /^[0-9]+$/,
-                                    message: 'La Ligne doit contenir seulement les chiffres'
-                            }
-                            }
-                    },
-                    photo: {
                     validators: {
-                    file: {
-//                        extension: 'png',
-//                        extension: {'png', 'PNG', 'jpeg', 'JPEG', 'gif', 'GIF'},
-//                        extension: ('png', 'PNG', 'jpeg', 'JPEG', 'gif', 'GIF'),
-//                        extension: ('png', 'JPEG'),
-//                        maxSize: 5*1024*1024,
-                    message: 'Veuillez choisir une taille inferieur à 5M'
+                        regexp: {
+                            regexp: /^[0-9]+$/,
+                            message: 'Le Téléphone doit contenir seulement les chiffres'
+                        }
                     }
+                },
+                ligne: {
+                    message: 'Ligne de l\'utilisateur invalide',
+                    validators: {
+                        regexp: {
+                            regexp: /^[0-9]+$/,
+                            message: 'La Ligne doit contenir seulement les chiffres'
+                        }
                     }
+                },
+                photo: {
+                    validators: {
+                        file: {
+                            //                        extension: 'png',
+                            //                        extension: {'png', 'PNG', 'jpeg', 'JPEG', 'gif', 'GIF'},
+                            //                        extension: ('png', 'PNG', 'jpeg', 'JPEG', 'gif', 'GIF'),
+                            //                        extension: ('png', 'JPEG'),
+                            //                        maxSize: 5*1024*1024,
+                            message: 'Veuillez choisir une taille inferieur à 5M'
+                        }
                     }
+                }
             }
-    });
-            // Validate the form manually
-//    $('#validateBtn').click(function() {
-//        $('#ajout_utilisateur').bootstrapValidator('validate');
-//    });
-//
-//    $('#resetBtn').click(function() {
-//        $('#ajout_utilisateur').data('bootstrapValidator').resetForm(true);
-//    });
+        });
+        // Validate the form manually
+        //    $('#validateBtn').click(function() {
+        //        $('#ajout_utilisateur').bootstrapValidator('validate');
+        //    });
+        //
+        //    $('#resetBtn').click(function() {
+        //        $('#ajout_utilisateur').data('bootstrapValidator').resetForm(true);
+        //    });
     });
 </script>

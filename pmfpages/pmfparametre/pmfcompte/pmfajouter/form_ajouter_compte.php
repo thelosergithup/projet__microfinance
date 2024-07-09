@@ -29,6 +29,7 @@
                                                     while ($rowp = mysqli_fetch_assoc($rsltp)) {
                                                     ?>
                                                         <option value="<?php echo $rowp["idtypecom"]; ?>" <?php if ($rowp["idtypecom"] == $_SESSION['formcompte'][NUM_PAGE]["typecompte"]) { ?> selected <?php } ?>><?php echo $rowp["nomtypecom"]; ?></option>
+                                                        <option value="<?php echo $rowp["idclient"]; ?>" <?php if ($rowp["idclient"] == $_SESSION['formcompte'][NUM_PAGE]["client"]) { ?> selected <?php } ?>><?php echo $rowp["nomclient"]; ?></option>
 
                                                     <?php
                                                     }
