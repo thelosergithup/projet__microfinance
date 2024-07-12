@@ -73,6 +73,16 @@
 
                                 </ul>
                             </li>
+                            <li class="dropdown  ">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">pret<b class="caret"></b></a>
+                                <ul class="dropdown-menu animated zoomIn">
+
+                                    <!--  <li><a href="pmfpages/pmftransaction/pmfdepot/form_depot">depot</a></li> -->
+                                    <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfpret/pmfdemandepret/pmfajouter/form_demande'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">demande pret</a>
+                                    <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfpret/lister_pret'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">liste des demandes</a>
+
+                                </ul>
+                            </li>
                         <?php }
                         ?>
 

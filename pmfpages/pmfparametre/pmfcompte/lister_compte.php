@@ -11,7 +11,7 @@
                             if (($_SESSION["roleuser"] == "administrateur") ||  ($_SESSION["roleuser"] == "Directeur Général")||  ($_SESSION["roleuser"] == "Agent de pret") ) {
                                 ?>
                                 <div class="add-product">
-                                    <a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfparametre/pmfcompte/pmfajouter/ajout_compte'); ?>" class="btn btn-primary btn-sm pull-right"><i class="glyphicon glyphicon-plus"></i> Ajouter</a>
+                                    <a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfparametre/pmfcompte/pmfajouter/ajout_compte'); ?>" class="btn btn-primary btn-sm pull-right"><i class="glyphicon glyphicon-plus"></i> Créer</a>
                                 </div>
                                 <?php
                             }

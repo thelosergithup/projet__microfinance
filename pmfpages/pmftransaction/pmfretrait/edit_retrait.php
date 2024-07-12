@@ -5,7 +5,7 @@ include('pmfconnexion/connexion.php');
 //include('db_connection.php'); // Assurez-vous de connecter votre base de données
 
 // Récupération du numéro de l'étape en cours
-if (empty($_GET['pagecom']) or ! is_numeric($_GET['pagecom'])) {
+if (empty($_GET['pagecom']) or !is_numeric($_GET['pagecom'])) {
     define('NUM_PAGE', 1);
 } else {
     // En situation réelle, il faudrait vérifier l'existence de cette page
@@ -81,9 +81,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query->execute(); */
     $nouveau_solde = $compte['solde'] - $montant;
     $con->query("update compte set  solde=$nouveau_solde, where idcompte=$numero_compte") or die(mysqli_error($con));
-                                    
-   
+
+
 
     echo "Retrait effectué avec succès.";
 }
-?>

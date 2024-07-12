@@ -1,0 +1,67 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.loan-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.loan-card {
+    width: 150px;
+    padding: 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.loan-card h2 {
+    margin: 0 0 10px 0;
+}
+
+.loan-card button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.loan-card button:hover {
+    background-color: #003f7f;
+}
+
+.loan-card .btn-delete {
+    background-color: #dc3545;
+}
+
+.loan-card .btn-delete:hover {
+    background-color: #a71d2a;
+}
