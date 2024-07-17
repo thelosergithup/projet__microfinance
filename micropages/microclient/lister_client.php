@@ -47,7 +47,7 @@
                                              <th>Etat</th>
                                              <th>Date</th>
                                              <th>Login</th>
-                                             <th>Op&eacute;ration</th>
+                                             <!-- <th>Op&eacute;ration</th> -->
                                          </tr>
                                      </thead>
                                      <tbody>

@@ -111,15 +111,7 @@ function lister_client($con)
             </td>
             <td><?php print nl2br(htmlspecialchars($recuser["dateajoutclient"])) ?></td>
             <td><?php print nl2br(htmlspecialchars($recuser["loginclient"])) ?></td>
-            <td>
-                <a href="<?= $url; ?>?page=<?php echo base64_encode('micropages/microclient/editer_client/edit_client'); ?>&idclient=<?php echo $recuser["idclient"]; ?>">
-                    <span title="Modifier cette client" alt="editer"><i class="glyphicon glyphicon-edit"></i></span>
-                </a>
-                &nbsp;&nbsp;
-                <a href='<?= $url; ?>?page=<?php echo base64_encode('micropages/microclient/client_ajax'); ?>&idclient=<?php echo $recuser["idclient"]; ?>&supprimer=supprimer' onclick="return(confirm('Etes-vous s&ucirc;r de vouloir Supprimer ce client ?'));">
-                    <span title="Supprimer ce client " alt="suppr"> <i class="glyphicon glyphicon-trash"></i></span>
-                </a>
-            </td>
+           
         </tr>
 <?php
     }

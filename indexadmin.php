@@ -146,7 +146,12 @@ if (!($_SESSION["loginuser"]) || !($_SESSION["passuser"]) || (!$_SESSION["etatus
 
         ?>
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-2">
+                <?php// include './pmfincludes/sidebar.php' ; ?>
+
+            </div>
+            
+            <div class="col-sm-10">
                 <div class="row">
                     <div class="col-sm-12">
                         <a href="javascript:history.go(-1)" class="btn btn-sm pull-left btn-primary">
