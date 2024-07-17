@@ -137,7 +137,8 @@ if (!($_SESSION["loginuser"]) || !($_SESSION["passuser"]) || (!$_SESSION["etatus
                 <![endif]-->
 
         <?php
-
+        include './micropages/microclient/clientfonction.php';
+        include './pmfpages/pmfprets/pmffonction.php';
         include './pmfpages/pmfparametre/pmftypecompte/pmffonction.php';
         include './pmfpages/pmfparametre/pmfcompte/pmffonction.php';
         include './pmfpages/pmfutilisateur/pmffonction.php';

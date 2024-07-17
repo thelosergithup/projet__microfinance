@@ -3,7 +3,7 @@
     <div class="single-pro-review-area">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 animated zoomIn">
                     <div class="sparkline12-list mt-b-30">
                         <div class="sparkline12-hd">
                             <div class="main-sparkline12-hd">

@@ -1,33 +1,37 @@
 <?php
-$rsltuser = $con->query("select * from demandepret d JOIN client c ON d.idclient = c.idclient where iddemande='".$_SESSION['iddemande']."'") or die(mysqli_error($con));
+$rsltuser = $con->query("select * from sot_utilisateur where iduser='".$_SESSION["iduser"]."'") or die(mysqli_error($con));
     $recuser = mysqli_fetch_assoc($rsltuser);
-    
+
 ?>
 <!--<div class="row">-->
     <div class="col-sm-6 col-xs-12 col-lg-6 col-sm-offset-3">
-        <div class="panel panel-warning animated zoomIn">
+        <div class="panel panel-warning">
             <div class="panel-heading">
-                <h4>Informations sur le  pret :</h4>
+                <h4>Informations de <?= $recuser['nomuser']; ?>&nbsp;<?= $recuser['prenomuser']; ?></h4>
             </div>
             <div class="panel-body">
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-3">
-                    <img class="img-rounded" style="width: 100%;" src="pmfupload/profil/<?php print nl2br(htmlspecialchars($recuser["photoclient"])); ?>"> 
+                    <img class="img-rounded" style="width: 100%;" src="sotcocogupload/profil/<?php print nl2br(htmlspecialchars($recuser["photouser"])); ?>"> 
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-9">
-                <b><u>Montant:</u></b> &nbsp;<?= $recuser['montantdemande']; ?>
+                <b><u>Nom:</u></b> &nbsp;<?= $recuser['nomuser']; ?>
                 <br><br>
-                <b><u>Durée (mois):</u></b> &nbsp;<?= $recuser['dureedemande']; ?>
+                <b><u>Prenom:</u></b> &nbsp;<?= $recuser['prenomuser']; ?>
                 <br><br>
-                <b><u>Num&eacute;ro de t&eacute;l&eacute;phone:</u></b> &nbsp;<?= $recuser['telclient']; ?>
+                <b><u>Num&eacute;ro de t&eacute;l&eacute;phone:</u></b> &nbsp;<?= $recuser['teluser']; ?>
                 <br><br>
-                <b><u>Motif:</u></b> &nbsp;<?= $recuser['motifdemande']; ?>
+                <b><u>Ligne:</u></b> &nbsp;<?= $recuser['ligneuser']; ?>
                 <br><br>
-                <b><u>Date de la demande:</u></b> &nbsp;<?= $recuser['datedemande']; ?>
+                <b><u>Login:</u></b> &nbsp;<?= $recuser['loginuser']; ?>
                 <br><br>
-                <b><u>Nom du client:</u></b> &nbsp;<?= $recuser['nomclient']; ?>
+                <b><u>Genre:</u></b> &nbsp;<?= $recuser['genreuser']; ?>
                 <br><br>
-                <b><u>Adresse em@il:</u></b> &nbsp;<?= $recuser['emailclient']; ?>
+                <b><u>R&ocirc;le:</u></b> &nbsp;<?= $recuser['roleuser']; ?>
+                <br><br>
+                <b><u>Adresse em@il:</u></b> &nbsp;<?= $recuser['emailuser']; ?>
+                <br><br>
+                <b><u>Etat:</u></b> &nbsp;<?= $recuser['etatuser']; ?>
                 </div>
             </div>
             </div>
@@ -37,7 +41,7 @@ $rsltuser = $con->query("select * from demandepret d JOIN client c ON d.idclient
                 &nbsp;&nbsp;
                 <a href="<?= $url; ?>?page=<?php echo base64_encode('sotcocogpages/sotcocogutilisateur/sotcocogediterprofil/edit_utilisateur'); ?>&idutilisateur=<?php echo $recuser["iduser"]; ?>" class="btn btn-info">
                     <span title="Modifier mon compte utilisateur" alt="editer"></span>
-                    <i class="glyphicon glyphicon-edit"></i>&nbsp;&nbsp;<b>Notifier le client</b>
+                    <i class="glyphicon glyphicon-edit"></i>&nbsp;&nbsp;<b>Modifier mon compte</b>
                 </a>
                
                 

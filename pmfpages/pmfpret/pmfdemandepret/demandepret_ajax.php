@@ -8,7 +8,7 @@ if (isset($_REQUEST["supprimer"])) {
         $con->query(" delete from demandepret where iddemande='" . $id . "' ") or die(mysqli_error($con));
 
         echo "<script language='javascript'>alert('Suppression terminée')</script>";
-        $pagp = 'pmfpages/pmfpret/pmfdemandepret/lister_pret';
+        $pagp = 'pmfpages/pmfpret/lister_pret';
         die('<meta http-equiv="refresh" content="0 ; URL=' . $url . '?page=' . base64_encode($pagp) . '">');
    /*  } else {
 

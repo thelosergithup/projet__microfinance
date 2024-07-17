@@ -65,12 +65,6 @@
                                     <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmftransaction/pmfretrait/form_retrait'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">retrait</a>
                                     <li class="divider"></li>
                                     <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmftransaction/pmftransfert/form_transfert'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">transfert</a>
-
-                                    <li class="divider"></li>
-                                    <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfpret/demande_pret'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">demande pret</a>
-                                    <li class="divider"></li>
-                                    <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfpret/calendrier_remboursement'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">calendrier de remboursement</a>
-
                                 </ul>
                             </li>
                             <li class="dropdown  ">
@@ -80,9 +74,24 @@
                                     <!--  <li><a href="pmfpages/pmftransaction/pmfdepot/form_depot">depot</a></li> -->
                                     <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfpret/pmfdemandepret/pmfajouter/form_demande'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">demande pret</a>
                                     <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfpret/lister_pret'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">liste des demandes</a>
+                                    <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfprets/lister_pret'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">liste des prets</a>
 
                                 </ul>
                             </li>
+                            <li class="dropdown  ">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">clients<b class="caret"></b></a>
+                                <ul class="dropdown-menu animated zoomIn">
+
+                                    <!--  <li><a href="pmfpages/pmftransaction/pmfdepot/form_depot">depot</a></li> -->
+                                    <li class=""><a href="<?= $url; ?>?page=<?php echo base64_encode('micropages/microclient/lister_client'); ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">liste des clients</a>
+                                        <!--                                     <li class=""><a href="<?= $url; ?>?page=<?php //echo base64_encode('micropages/pmfpret/lister_pret'); 
+                                                                                                                            ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">liste des demandes</a>
+                                    <li class=""><a href="<?= $url; ?>?page=<?php //echo base64_encode('micropages/pmfprets/lister_pret'); 
+                                                                            ?>" class="nav-link area" style="padding-left: 5px; padding-right: 5px;">liste des prets</a>
+ -->
+                                </ul>
+                            </li>
+
                         <?php }
                         ?>
 
