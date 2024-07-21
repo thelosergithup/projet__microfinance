@@ -32,9 +32,9 @@
                                 <thead>
                                     <tr>
                                         <th data-field="state" data-checkbox="true"></th>
-                                        <th>Numero Compte</th>
+                                        <th> Numero Compte</th>
                                         <th>Nom client</th>
-                                        <th>ID client</th>
+                                        <th>loginn client</th>
                                 <th>Type Compte</th>
                                 <th>Etat</th>
                                 <th>Solde</th>

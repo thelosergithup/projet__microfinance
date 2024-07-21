@@ -20,7 +20,7 @@ switch (NUM_PAGE) {
         if (!empty($_POST)) {
             $_SESSION['formcompte'][NUM_PAGE - 1] = array(
                 'typecompte' => trim(htmlspecialchars($_POST["typecompte"])),
-                'compte' => ucwords(trim(htmlspecialchars($_POST["compte"]))),
+                'idclient' => ucwords(trim(htmlspecialchars($_POST["idclient"]))),
                 'solde' => ucwords(trim(htmlspecialchars($_POST["solde"]))),
                 'devise' => ucwords(trim(htmlspecialchars($_POST["devise"])))
             );

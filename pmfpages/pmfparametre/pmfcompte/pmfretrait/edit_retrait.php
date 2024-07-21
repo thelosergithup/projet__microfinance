@@ -1,11 +1,11 @@
 <?php
-
+session_start();
 include('pmfconnexion/connexion.php');
 
 //include('db_connection.php'); // Assurez-vous de connecter votre base de données
 
 // Récupération du numéro de l'étape en cours
-/* if (empty($_GET['pagecom']) or !is_numeric($_GET['pagecom'])) {
+if (empty($_GET['pagecom']) or !is_numeric($_GET['pagecom'])) {
     define('NUM_PAGE', 1);
 } else {
     // En situation réelle, il faudrait vérifier l'existence de cette page
@@ -16,7 +16,7 @@ include('pmfconnexion/connexion.php');
 if (empty($_SESSION['formretrait'])) {
     $_SESSION['formretrait'] = array();
 }
- */
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $numero_compte = $_POST['numero_compte'];
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     echo '1';
     // Vérifier que le numéro de compte existe
-    $query = $con->prepare("SELECT * FROM compte WHERE idcompte = ?");
+    $query = $conn->prepare("SELECT * FROM compte WHERE idcompte = ?");
     $query->bind_param("s", $numero_compte);
     $query->execute();
     $result = $query->get_result();
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $compte = $result->fetch_assoc();
     echo '2';
     // Vérifier que le login de l'utilisateur existe
-    $query = $con->prepare("SELECT * FROM client WHERE loginclient = ?");
+    $query = $conn->prepare("SELECT * FROM Client WHERE idclient = ?");
     $query->bind_param("s", $login_utilisateur);
     $query->execute();
     $result = $query->get_result();
@@ -61,9 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     echo '4';
     // Vérifier que le montant est valide
-    //$devise = strtolower($compte['devise']);
-    if (( $montant < 1000)) {
-        echo "Le montant doit être supérieur ou égal à 1000 FCFA .";
+    $devise = strtolower($compte['devise']);
+    if (($devise == 'fcfa' && $montant < 1000) || ($devise != 'fcfa' && $montant < 50)) {
+        echo "Le montant doit être supérieur ou égal à 1000 FCFA ou 50 dans une autre devise.";
         exit;
     }
 
@@ -80,12 +80,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query->bind_param("ds", $nouveau_solde, $numero_compte);
     $query->execute(); */
     $nouveau_solde = $compte['solde'] - $montant;
-    $con->query("UPDATE compte set  solde=$nouveau_solde where idcompte=$numero_compte") or die(mysqli_error($con));
+    $con->query("update compte set  solde=$nouveau_solde where idcompte=$numero_compte") or die(mysqli_error($con));
 
 
-    echo "<div class='alert alert-success'>Retrait effectué avec succès. nouveau solde : " . $nouveau_solde . ".</div>";
 
-    //echo "Retrait effectué avec succès.";
-} else {
-    echo "errreurerrrrrerrrr";
+    echo "Retrait effectué avec succès.";
 }

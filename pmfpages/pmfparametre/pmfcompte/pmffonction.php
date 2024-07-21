@@ -7,7 +7,7 @@ function inserer_compte($reg, $con)
     $url = basename($path);
     echo $_POST['typecompte'];
 
-    $con->query("insert into compte(libellecompte,idpays,datecompte) values('" . addslashes($reg["1"]["compte"]) . "', '" . $reg["1"]["pays"] . "',now())") or die(mysqli_error($con));
+    $con->query("INSERT INTO compte(idtypeCom,idclient,solde,deviseCompte,dateCreation) values('" . addslashes($reg["1"]["typecompte"]) . "',3,'" . $reg["1"]["solde"] . "','" . $reg["1"]["devise"] . "',now())") or die(mysqli_error($con));
     //            $con->query("insert into log(iduser,operation,dateLog) values('{$_SESSION['iduser']}','Ajout dans la table sot_compte de la valeure {$reg["1"]["compte"]}',now())") or die(mysqli_error($con));
     echo "<script language='javascript'>$('div.addok').show('slow').delay(8000).hide('slow');</script>";
     unset($_SESSION['formcompte']);
@@ -56,13 +56,13 @@ function lister_compte($con)
                 <?php
                 if ($reccompte["etatCompte"]) {
                 ?>
-                    <a href='<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfparametre/pmfcompte/compte_ajax'); ?>&idcompte=<?php echo $recuser["idcompte"]; ?>&desactiver=desactiver' onclick="return(confirm('Etes-vous s&ucirc;r de vouloir Désactiver ce compte ?'));">
+                    <a href='<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfparametre/pmfcompte/compte_ajax'); ?>&idcompte=<?php echo $reccompte["idcompte"]; ?>&desactiver=desactiver' onclick="return(confirm('Etes-vous s&ucirc;r de vouloir Désactiver ce compte ?'));">
                         <span title="Activ&eacute;" data-toggle="tooltip" alt="oui" class="label-success label">Activ&eacute;</span>
                     </a>
                 <?php
                 } else {
                 ?>
-                    <a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfparametre/pmfcompte/compte_ajax'); ?>&idcompte=<?php echo $recuser["idcompte"]; ?>&activer=activer" onclick="return(confirm('Etes-vous s&ucirc;r de vouloir Activer ce compte ?'));">
+                    <a href="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfparametre/pmfcompte/compte_ajax'); ?>&idcompte=<?php echo $reccompte["idcompte"]; ?>&activer=activer" onclick="return(confirm('Etes-vous s&ucirc;r de vouloir Activer ce compte ?'));">
                         <span title="D&eacute;sactiv&eacute; " data-toggle="tooltip" alt="non" class="label-warning label">D&eacute;sactiv&eacute;</span>
                     </a>
                 <?php

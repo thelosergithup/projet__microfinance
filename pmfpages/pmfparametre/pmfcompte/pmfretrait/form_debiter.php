@@ -9,7 +9,7 @@
                                 <h1>Formulaire de retrait d'argent</h1>
                             </div>
                         </div>
-                        <form id="retrait_argent" name="formretrait" enctype="multipart/form-data" method="post" action="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfparametre/pmfcompte/pmfretrait/retrait_debit'); ?>&pagecom=<?php echo NUM_PAGE + 1; ?>" style="padding: 2%;">
+                        <form id="retrait_argent" name="formretrait" enctype="multipart/form-data" method="post" action="<?= $url; ?>?page=<?php echo base64_encode('pmfpages/pmfparametre/pmfcompte/pmfretrait/edit_retrdait'); ?>&pagecom=<?php echo NUM_PAGE + 1; ?>" style="padding: 2%;">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="form-group" style="margin-left:15px;">

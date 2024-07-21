@@ -29,8 +29,6 @@
                                                     while ($rowp = mysqli_fetch_assoc($rsltp)) {
                                                     ?>
                                                         <option value="<?php echo $rowp["idtypecom"]; ?>" <?php if ($rowp["idtypecom"] == $_SESSION['formcompte'][NUM_PAGE]["typecompte"]) { ?> selected <?php } ?>><?php echo $rowp["nomtypecom"]; ?></option>
-                                                        <option value="<?php echo $rowp["idclient"]; ?>" <?php if ($rowp["idclient"] == $_SESSION['formcompte'][NUM_PAGE]["client"]) { ?> selected <?php } ?>><?php echo $rowp["nomclient"]; ?></option>
-
                                                     <?php
                                                     }
                                                     ?>
@@ -46,16 +44,18 @@
                                         <div class="inputGroupContainer">
                                             <div class="input-group">
                                                 <?php
-                                                $rsltp = $con->query('select * from client') or die(mysqli_error($con));
+                                                $rsltc = $con->query('SELECT *  FROM client c  join agence a on c.idag = a.idag') or die(mysqli_error($con));
                                                 ?>
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <select class="form-control" name="client" id="client">
                                                     <option value=""> - Choisissez un client - </option>
                                                     <?php
-                                                    while ($rowp = mysqli_fetch_assoc($rsltp)) {
+                                                    while ($rowc = mysqli_fetch_assoc($rsltc)) {
                                                     ?>
-                                                        <option value="<?php echo $rowp["idclient"]; ?>" <?php if ($rowp["idclient"] == $_SESSION['formcompte'][NUM_PAGE]["client"]) { ?> selected <?php } ?>><?php echo $rowp["nomclient"]; ?></option>
-                                                    <?php
+                                                        <option value="<?php echo $rowc["idclient"]; ?>"  selected><?php echo $rowc["nomclient"]; ?></option>
+                                                    <?php                                                  
+                                                    $_SESSION['formcompte'][NUM_PAGE]["idclient"]=$rowc["idclient"];
+                                                    
                                                     }
                                                     ?>
                                                 </select>
